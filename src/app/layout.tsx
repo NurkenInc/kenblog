@@ -1,5 +1,9 @@
+'use client';
+
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <div className="flex min-h-[calc(100vh-75px)]">
+          {children}
+          <Sidebar />
+        </div>
+      </body>
     </html>
   )
 }
