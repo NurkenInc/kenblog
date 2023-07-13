@@ -5,11 +5,12 @@ import { getAuthSession } from '@/shared/libs/configs/session/session';
 import { getServerSession } from 'next-auth';
 
 interface PostVoteButtonProps {
-  postId: string,
-  initialLikes?: number,
-  initialDislikes?: number,
-  initialVote?: VoteType | null,
+  postId: string
+  initialLikes?: number
+  initialDislikes?: number
+  initialVote?: VoteType | null
   getData?: () => Promise<(Post & {votes: Vote[]}) | null>
+  disabled?: boolean
 }
 
 // todo: vote it's a separate entity and button should be in that enityty ad should be totally reusable
@@ -20,6 +21,7 @@ export const PostVoteButtonServer = async (props: PostVoteButtonProps) => {
     initialDislikes = 0, 
     initialVote, 
     getData,
+    disabled,
   } = props;
 
   const session = await getAuthSession();
@@ -45,6 +47,7 @@ export const PostVoteButtonServer = async (props: PostVoteButtonProps) => {
 
   return (
     <PostVoteButtonClient 
+      disabled={!!disabled}
       postId={postId}
       initialLikes={_likesAmount}
       initialDislikes={_dislikesAmount}

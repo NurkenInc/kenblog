@@ -1,5 +1,5 @@
 import { RouteGuard } from '@/processes/Routes/RouteGuard'
-import { SettingsPage } from '@/pages/SettingsPage'
+import { SettingsPage } from '@/layouts/SettingsPage'
 
 export const metadata = {
   title: 'Settings',

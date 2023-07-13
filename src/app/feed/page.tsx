@@ -1,4 +1,4 @@
-import { BlogsPage } from '@/pages/BlogsPage'
+import { BlogsPage } from '@/layouts/BlogsPage'
 
 export const metadata = {
   title: 'Feed',

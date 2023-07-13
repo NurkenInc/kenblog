@@ -1,4 +1,4 @@
-import { BlogDetailsPage } from '@/pages/BlogDetailsPage/ui/BlogDetailsPage/BlogDetailsPage';
+import { BlogDetailsPage } from '@/layouts/BlogDetailsPage/ui/BlogDetailsPage/BlogDetailsPage';
 import { redis } from '@/shared/libs/utils/redis';
 import { CachedPost } from '@/shared/libs/types/redis/redis';
 import { Post, User, Vote } from '@prisma/client';

@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Button } from '@/shared/ui/Button/button';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { PostType } from '../../model/schemas/preview.schema';
 import { uploadImage } from '@/shared/libs/utils/file';
 import { CreatePostFormContext } from '../../model/context/createPostFormContext';
@@ -27,7 +27,7 @@ export const PostPreviewForm = (props: PostPreviewFormProps) => {
   const { form } = useContext(CreatePostFormContext);
   const { category, tags, title, content, thumbnail } = form;
   const { data: session } = useSession();
-  const queryClient = getQueryClient(); // useQueryClient
+  const queryClient = getQueryClient();
 
   const router = useRouter();
 

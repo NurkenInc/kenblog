@@ -1,4 +1,4 @@
-import { UserProfilePage } from '@/pages/UserProfilePage';
+import { UserProfilePage } from '@/layouts/UserProfilePage';
 import { Sidebar } from '@/widgets/Sidebar';
 import { userConfig } from '@/shared/libs/configs/consts/user';
 

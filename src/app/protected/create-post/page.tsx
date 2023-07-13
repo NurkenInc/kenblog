@@ -1,4 +1,4 @@
-import { CreatePostPage } from '@/pages/CreatePostPage';
+import { CreatePostPage } from '@/layouts/CreatePostPage';
 import { RouteGuard } from '@/processes/Routes/RouteGuard';
 
 export default function CreatePost() {

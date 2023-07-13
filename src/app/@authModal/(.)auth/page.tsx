@@ -1,4 +1,4 @@
-import { AuthenticationPage } from '@/pages/AuthenticationPage/ui/AuthenticationPage';
+import { AuthenticationPage } from '@/layouts/AuthenticationPage/ui/AuthenticationPage';
 
 export const metadata = {
   title: 'Authorization',

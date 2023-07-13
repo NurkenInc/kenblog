@@ -1,6 +1,6 @@
 import { feedConfig } from '@/shared/libs/configs/consts/feed';
 import { Navbar } from '@/widgets/Navbar';
-import { BlogsSidebar } from '@/pages/BlogsPage';
+import { BlogsSidebar } from '@/layouts/BlogsPage';
 
 export default function Layout({
   children,

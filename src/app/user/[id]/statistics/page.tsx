@@ -1,4 +1,4 @@
-import { UserStatisticsPage } from '@/pages/UserStatisticsPage';
+import { UserStatisticsPage } from '@/layouts/UserStatisticsPage';
 import { Sidebar } from '@/widgets/Sidebar';
 import { userConfig } from '@/shared/libs/configs/consts/user';
 
