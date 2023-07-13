@@ -1,0 +1,1 @@
+export { UserCommentsPage } from './ui/UserCommentsPage/UserCommentsPage';

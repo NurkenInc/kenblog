@@ -1,33 +1,18 @@
-import { ReactNode, memo } from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/shared/ui/Dialog/dialog";
-import { AuthForm } from '../AuthForm/AuthForm';
+import CloseModal from '@/shared/ui/Dialog/close-dialog';
+import { AuthTabs } from '../AuthTabs/AuthTabs';
 
-interface AuthModalProps {
-  className?: string,
-  trigger?: ReactNode,
-}
-
-export const AuthModal = memo((props: AuthModalProps) => {
-  const { 
-    className,
-    trigger,
-  } = props
-
+export const AuthModal = () => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <AuthForm />
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
+    <div className='fixed inset-0 bg-zinc-900/20 z-50'>
+      <div className='container flex items-center h-full max-w-lg mx-auto'>
+        <div className='relative bg-white w-full pt-4 h-fit px-2 rounded-lg'>
+          <div className='absolute top-4 right-4'>
+            <CloseModal />
+          </div>
+
+          <AuthTabs />
+        </div>
+      </div>
+    </div>
   )
-})
+}

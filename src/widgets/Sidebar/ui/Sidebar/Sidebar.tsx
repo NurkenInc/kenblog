@@ -1,23 +1,28 @@
-import { memo } from 'react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/shared/ui/NavigationMenu/navigation-menu";
+import { ReactNode } from 'react';
+import { SidebarNavItem } from '@/shared/libs/types/nav/nav';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { cn } from '@/shared/libs/utils/utils';
 
-export const Sidebar = memo(() => {
+interface SidebarProps {
+  items?: SidebarNavItem[],
+  content?: ReactNode,
+  className?: string,
+}
+
+export const Sidebar = async (props: SidebarProps) => {  
+  const {
+    items,
+    content,
+    className,
+  } = props;
+
+  const sidebarItems = items?.map(item =>  (
+    <SidebarItem item={item} key={item.title} />
+  ))
+
   return (
-    <NavigationMenu className="w-[300px] border-l-2 min-h-full">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          Recent Posts
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <aside className={cn("grid grid-flow-row auto-rows-max text-sm p-4 w-[300px]", className)}>
+      {(content) ?? (sidebarItems)}
+    </aside>
   )
-})
+}
